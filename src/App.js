@@ -30,12 +30,19 @@ function App() {
           user: user,
         });
       });
-      spotify.getUserPlaylists().then((playlists) =>
+      spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: 'SET_PLAYLISTS',
           playlists: playlists,
+        });
+      });
+
+      spotify.getPlaylist('37i9dQZEVXcLMUlkBLpMc3').then(response => {
+        dispatch({
+          type: 'SET_DISCOVER_WEEKLY',
+          discover_weekly: response,
         })
-      )
+      })
     }
 
     // console.log('I HAVE A TOKEN>>> ', token)
