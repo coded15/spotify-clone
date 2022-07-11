@@ -34,5 +34,4 @@ function Body({ spotify }) {
         </div>
     )
 }
-
 export default Body
